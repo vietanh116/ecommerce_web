@@ -1,0 +1,16 @@
+-- Dọn dẹp dữ liệu cũ (nếu có) để tránh xung đột
+DELETE FROM products;
+DELETE FROM categories;
+
+-- Bơm dữ liệu Danh mục
+INSERT INTO categories (id, name) VALUES 
+(1, 'Laptop & Máy trạm'),
+(2, 'Bàn phím cơ'),
+(3, 'Phụ kiện máy tính');
+
+-- Bơm dữ liệu Sản phẩm (Bao gồm đầy đủ Giá cũ, Mô tả ngắn và Số lượng bán)
+INSERT INTO products (id, category_id, name, price, old_price, short_description, sold_count, stock_quantity, image_url, description) VALUES 
+(1, 3, 'Chuột Attack Shark X85', 600000, 800000, 'Chuột không dây siêu nhẹ, form cầm thoải mái cho thời gian dài.', 410, 50, 'attack_shark.webp', 'Chuột gaming không dây siêu nhẹ, thiết kế công thái học...'),
+(2, 2, 'Bàn phím cơ E-Dra EK375 Pro', 850000, NULL, 'Bàn phím cơ mạch xuôi, gõ êm, kết nối 3 chế độ tiện lợi.', 85, 30, 'edra_ek375.webp', 'Bàn phím cơ E-Dra EK375 Pro với thiết kế layout 75%...'),
+(3, 2, 'Bàn phím cơ Aula F75', 1250000, 1500000, 'Bàn phím cơ TKL, có núm xoay đa năng, led RGB sặc sỡ.', 320, 20, 'aula_f75.webp', 'Bàn phím cơ Aula F75 kết nối 3 modes, led RGB...'),
+(4, 1, 'Laptop HP Victus 16', 21500000, 22000000, 'Laptop gaming hiệu năng cao, tản nhiệt mát, màn hình 144Hz mượt mà.', 150, 10, 'hp_victus.webp', 'Laptop gaming HP Victus 16 trang bị cấu hình cực mạnh...');
